@@ -1,4 +1,4 @@
-const CACHE='ricettari-v4-shell';
+const CACHE='ricettari-v4.1-shell';
 const CORE=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 const CDN_HOSTS=new Set(['cdn.jsdelivr.net']);
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE);await self.skipWaiting()})()));

@@ -38,3 +38,7 @@ L'app usa il Project URL e la Publishable key del progetto `ricettario`. La chia
 ## Nota
 
 Per la prima apertura dopo l'aggiornamento è consigliata una connessione Internet, perché vengono caricati Supabase JS, jsPDF e html2canvas.
+
+
+## Correzione 4.0.1
+Risolto un errore di inizializzazione JavaScript che poteva mostrare una pagina bianca all’avvio. Aggiornata anche la cache PWA.

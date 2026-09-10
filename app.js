@@ -1,10 +1,11 @@
 const SUPABASE_URL='https://yncoztexkiuhusaukjcm.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_MyNvin0G8-glYkWJZPLwUw_BSAoii1a';
 const APP_URL='https://grecoofabiana2005-hub.github.io/ricettario/';
-const APP_VERSION='4.0.0';
+const APP_VERSION='4.0.1';
 const COLORS=['#ef9db0','#9bcfa7','#f5ca68','#9bc8ee','#c7b0ea','#f3aa91','#91d1bd','#e7ceb7','#e88f97','#8fc6b0'];
 const DB_NAME='ricettario_pwa_db',DB_STORE='app',LOCAL_KEY='state',LEGACY_KEY='ricettario_pwa_v1';
 const DEFAULT_STATE={version:4,cookbooks:[],settings:{displayName:'',theme:'light'}};
+const clone=v=>typeof structuredClone==='function'?structuredClone(v):JSON.parse(JSON.stringify(v));
 
 let sb=null,currentUser=null,state=clone(DEFAULT_STATE),deviceLocalState=clone(DEFAULT_STATE),db=null;
 let route={view:'auth',cookbookId:null,recipeId:null},ingredientDraft=[],draftPhoto=null,draftPhotoChanged=false,searchMode='all';
@@ -22,7 +23,6 @@ const ICONS={
   logout:'<path d="M10 17l5-5-5-5M15 12H3"/><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"/>',cloud:'<path d="M17.5 19H7a5 5 0 0 1-.8-9.9A7 7 0 0 1 19.8 11 4 4 0 0 1 17.5 19z"/><path d="m9 14 3-3 3 3M12 11v6"/>'
 };
 const icon=(name,cls='')=>`<span class="${cls}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]||''}</svg></span>`;
-const clone=v=>typeof structuredClone==='function'?structuredClone(v):JSON.parse(JSON.stringify(v));
 const uid=()=>crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(16).slice(2)}`;
 const esc=(s='')=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const safeFileName=s=>(s||'ricetta').replace(/[\\/:*?"<>|]+/g,'-').trim()||'ricetta';
