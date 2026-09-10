@@ -7,19 +7,22 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Ricettari" />
-  <meta name="description" content="I tuoi ricettari personali, sempre con te." />
+  <meta name="description" content="I tuoi ricettari personali, sincronizzati su tutti i dispositivi." />
   <title>I miei ricettari</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <div id="app" aria-live="polite"></div>
   <input id="photoInput" type="file" accept="image/*" hidden />
   <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
   <input id="backupInput" type="file" accept="application/json,.json" hidden />
+  <div id="pdfStage" class="pdf-stage" aria-hidden="true"></div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>

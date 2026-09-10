@@ -1,7 +1,7 @@
 {
   "name": "I miei ricettari",
   "short_name": "Ricettari",
-  "description": "Raccogli, organizza e condividi le tue ricette.",
+  "description": "Raccogli, sincronizza e condividi le tue ricette.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
